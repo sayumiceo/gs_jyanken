@@ -141,7 +141,7 @@ header {
     color: white; /* 文字色 */
     border: none; /* 枠線なし */
     border-radius: 20px; /* 角丸 */
-    padding: 10px 20px; /* 内側の余白 */
+    padding: 10px 130px; /* 内側の余白 */
     margin: 20px 0; /* 外側の余白 */
     font-size: 20px; /* 文字のサイズ */
     cursor: pointer; /* カーソルをポインターに */
