@@ -53,6 +53,7 @@
   
     <script>
 const pancakeStates = {
+  // ゲームの状態が 数字 のときに表示する画像のパス
   0: './img/pancake00.png',
   1: './img/pancake01.png',
   2: './img/pancake02.png',
@@ -73,15 +74,18 @@ function updatePancakeState(won) {
     currentState = Math.min(7, currentState + 1); // 7が最大値
   }
 
-  // Update the image source
+  // Update the image source css読み込み・画像切り替え
   document.querySelector('.pancake').src = pancakeStates[currentState];
 
 
   // ゲームオーバーまたは勝利のメッセージを表示
      if (currentState === 0 || currentState === 7) {
+
+      // 条件 ? 真の場合の値 : 偽の場合の値;
         const message = currentState === 0 ? "You successfully ate them all🤤🍴" : "NO MORE PANCAKES FOR ME🚫🤮";
-        $("#endgame-message").text(message).css("visibility", "visible");
-        $("#retry-button").show(); // リトライボタンを表示
+        
+        $("#endgame-message").text(message).css("visibility", "visible"); //非表示と表示を切り替え
+        $("#retry-button").show(); // リトライボタンを表示. display: none;が設定されていた要素を、画面上に表示
         $(".play-button").hide(); // PLAYボタンを非表示に 
     }
 }
@@ -89,15 +93,15 @@ function updatePancakeState(won) {
 $(document).ready(function() {
   // ユーザーが手を選択
   $(".hand").on("click", function() {
-    $(".hand").removeClass("selected");
-    $(this).addClass("selected");
+    $(".hand").removeClass("selected"); //ユーザーが新たに手を選択するたびに、selected クラスを削除。以前に選択されていた手の選択状態をリセット
+    $(this).addClass("selected");  //クリックされた特定の「手」に selected クラスを追加
   });
 
   // PLAYボタンを押すとゲームスタート
   $(".play-button").on("click", function() {
-    const userChoice = $(".hand.selected").attr("id");
-    if (!userChoice) {
-      alert("手を選んでください！");
+    const userChoice = $(".hand.selected").attr("id"); //選択された要素の id 属性の値を取得. 値を userChoice
+    if (!userChoice) {     //userChoice が偽っぽい値の場合
+      alert("手を選んで！");
       return;
     }
 
