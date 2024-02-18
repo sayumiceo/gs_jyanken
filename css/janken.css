@@ -31,7 +31,6 @@ header {
 }
 
 .hand {
-    /* font-size: 44px; アイコンのサイズ */
     font-size: 2em; /* Larger emojis */
     margin: 0 10px; /* アイコンの間隔 */
     cursor: pointer; /* カーソルをポインターに */
@@ -43,7 +42,6 @@ header {
     height: 64px;
     line-height: 64px; /* アイコンを垂直中央に */
     margin: 0 10px; /* 余白を適切に *//* Space between hands */
-    /* box-shadow: 0 0 0 2px #ddd; グレーの枠線 */
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow */
     user-select: none; /* テキスト選択を防止 */
     padding: 10px; /* Space around the emoji */
