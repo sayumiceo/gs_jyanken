@@ -82,6 +82,7 @@ function updatePancakeState(won) {
         const message = currentState === 0 ? "You successfully ate them all🤤🍴" : "NO MORE PANCAKES FOR ME🚫🤮";
         $("#endgame-message").text(message).css("visibility", "visible");
         $("#retry-button").show(); // リトライボタンを表示
+        $(".play-button").hide(); // PLAYボタンを非表示に 
     }
 }
 
@@ -144,6 +145,7 @@ $(document).ready(function() {
         currentState = 3;
         $("#computer-hand").css("visibility", "hidden");
         $("#endgame-message").css("visibility", "hidden");
+        $(".play-button").show(); // PLAYボタンを再表示
         $(this).hide(); // リトライボタンを隠す
         $("#message").css("visibility", "hidden");
         $(".pancake").attr("src", pancakeStates[currentState]); // 初期画像に戻す
