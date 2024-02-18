@@ -11,7 +11,7 @@ body, html {
 header {
     font-size: 24px;
     color: #333;
-    margin-top: 10px; /* Adjust spacing as needed */
+    margin-top: 10px; /* Adjust the spacing as needed */
     margin-bottom: 20px; /* タイトルとコンテンツの間のスペースを調整 */
 }
 
