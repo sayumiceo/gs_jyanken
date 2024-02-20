@@ -31,7 +31,7 @@
     
 
         <!-- ユーザーの選択（グー、チョキ、パー） -->
-        <div class="choices">
+        <div class="choices">  
             <div id="gu_btn" class="hand">✊</div>
             <div id="cho_btn" class="hand">✌️</div>
             <div id="par_btn" class="hand">✋</div>
@@ -107,8 +107,9 @@ $(document).ready(function() {
 
     // コンピュータの手をランダムに選択して表示
     const hands = { 'gu_btn': '✊', 'cho_btn': '✌️', 'par_btn': '✋' };
-    const choices = Object.keys(hands);
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    const choices = Object.keys(hands); //handsオブジェクトのキー（ID）を取得し配列に格納
+    //choices[0]（'gu_btn'）、choices[1]（'cho_btn'）、choices[2]（'par_btn'）
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)]; //Object.keys(hands)によって生成されるchoices配列に3つの要素が含まれるため。
     $("#computer-hand").text(hands[computerChoice]).css("visibility", "visible");
 
     // 勝敗判定
@@ -131,7 +132,7 @@ $(document).ready(function() {
         'par_btn': 'gu_btn'
     };
 
-    if (winConditions[user] === computer) {
+    if (winConditions[user] === computer) { //ユーザーの手が勝つ手の値が computer と一致するならば
         $("#message").text("Yay!");
         userWon = true;
     } else {
