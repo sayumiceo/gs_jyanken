@@ -12,7 +12,7 @@
 
 ## ③DEMO
 （任意）デプロイしている場合はURLを記入
-https://github.com/sayumiceo/gs_jyanken
+https://sayumiceo.github.io/gs_jyanken/
 
 ## ④工夫した点・こだわった点
 -ちょっとはまってしまう可愛いゲームロジックを作った
